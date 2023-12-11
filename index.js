@@ -261,8 +261,7 @@ console.log(removeProductById(products, 202));
     **********/
 
 function getProductsByPriceRange(products, minPrice, maxPrice) {
-  return products.filter((x) => x.price >= maxPrice && x.price <= maxPrice);
+  return products.filter((x) => x.price <= maxPrice && x.price >= minPrice);
 }
-console.log("amal");
 
 console.log(getProductsByPriceRange(products, 19.99, 59.99));
