@@ -154,8 +154,9 @@ console.log(countElectronicsProducts(products));
 
 function listProductNamesByCategory(products, category) {
   // Your code here
-
-  return products.filter((x) => x.category == category).name;
+  const productNames = products.filter((x) => x.category == category);
+  const neew = productNames.name;
+  return neew;
 }
 console.log(listProductNamesByCategory(products, "Electronics"));
 
