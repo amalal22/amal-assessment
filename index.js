@@ -154,6 +154,7 @@ console.log(countElectronicsProducts(products));
 
 function listProductNamesByCategory(products, category) {
   // Your code here
+
   const productNames = products.filter((x) => x.category == category);
   const neew = productNames.name;
   return neew;
@@ -177,8 +178,17 @@ console.log(listProductNamesByCategory(products, "Electronics"));
 
 function getCheapestProduct(products) {
   // Your code here
+  const cheap = products[0];
+  i = 0;
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].price <= cheap) {
+      cheap = products[i].price;
+    } else {
+      return cheap;
+    }
+  }
 }
-// console.log(getCheapestProduct(products));
+console.log(getCheapestProduct(products));
 
 /**********
     Question 7:
