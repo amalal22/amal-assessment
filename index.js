@@ -152,12 +152,17 @@ console.log(countElectronicsProducts(products));
     ANSWER: ["Laptop", "Headphones"]
     **********/
 
-function listProductNamesByCategory(products, category) {
+function listProductNamesByCategory(products, categor) {
   // Your code here
 
-  const productNames = products.filter((x) => x.category == category);
-  const neew = productNames.name;
-  return neew;
+  // const productNames = products.filter((x) => x.category == categor);
+  //const neew = productNames.name;
+
+  return products
+    .filter((x) => x.category == categor)
+    .map((x) => {
+      return x.name;
+    });
 }
 console.log(listProductNamesByCategory(products, "Electronics"));
 
@@ -178,15 +183,7 @@ console.log(listProductNamesByCategory(products, "Electronics"));
 
 function getCheapestProduct(products) {
   // Your code here
-  const cheap = products[0];
-  i = 0;
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].price <= cheap) {
-      cheap = products[i].price;
-    } else {
-      return cheap;
-    }
-  }
+  return Math.min.apply(null, products);
 }
 console.log(getCheapestProduct(products));
 
