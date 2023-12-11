@@ -183,7 +183,11 @@ console.log(listProductNamesByCategory(products, "Electronics"));
 
 function getCheapestProduct(products) {
   // Your code here
-  return Math.min.apply(null, products);
+  let cheap = products[0];
+  products.forEach((x) => {
+    if (cheap.price >= x.price) cheap = x;
+  });
+  return cheap;
 }
 console.log(getCheapestProduct(products));
 
@@ -258,6 +262,9 @@ console.log(removeProductById(products, 202));
 
 function getProductsByPriceRange(products, minPrice, maxPrice) {
   // Your code here
+  return products.filter((x) => {
+    x.price >= min && x.price <= maxPrice;
+  });
 }
 
-// console.log(getProductsByPriceRange(products, 19.99, 59.99));
+console.log(getProductsByPriceRange(products, 19.99, 59.99));
